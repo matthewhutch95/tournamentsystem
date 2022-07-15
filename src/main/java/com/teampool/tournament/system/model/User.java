@@ -1,29 +1,33 @@
 package com.teampool.tournament.system.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+/**
+ * Basic model class
+ * Entity marks the class to be created as a table within database
+ *
+ */
 @Entity
-public class Player {
+public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userId;
     private String username;
     private String password;
     private double overallScore;
 
 
-    public Player() {
+    // constructor
+    public User() {
     }
 
     public int getId() {
-        return id;
+        return userId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.userId = id;
     }
 
     public String getUsername() {
