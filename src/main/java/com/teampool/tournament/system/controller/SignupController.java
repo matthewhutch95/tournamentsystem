@@ -40,10 +40,10 @@ public class SignupController {
     return a set of player objects with given tournament id as parameter
      */
     //TODO not working atm :)
-//    @GetMapping("/getListOfPlayersTournament/{tournamentid}")
-//    public List<Player> getAllPlayersTournamentId(@PathVariable("tournamentid") Long tournamentId){
-//        return playerService.getListOfPlayersTournament(tournamentId);
-//    }
+    @GetMapping("/getListOfPlayersTournament/{tournamentid}")
+    public List<Player> getAllPlayersTournamentId(@PathVariable("tournamentid") Long tournamentId){
+        return playerService.findPlayersByTournament(tournamentId);
+    }
 
     /*
     With @PutMapping, you just specify the path as you don't need a payload

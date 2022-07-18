@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Repository class
@@ -14,7 +15,7 @@ import java.util.List;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
-    //TODO not currently working, comment out with relating errors to run application
-//    @Query
-//    List<Player> findByTournamentId(Long tournamentid);
+    @Query(value = "SELECT * FROM player WHERE tournamentid = ?1", nativeQuery = true)
+    List<Player> findPlayersByTournament(Long tournamentId);
+
 }

@@ -40,8 +40,9 @@ public class PlayerServiceImpl implements PlayerService {
     // assign player to tournament using player id and tournament id
     @Override
     public Player assignPlayerToTournament(Long playerId, Long tournamentId){
+
         Tournament tournament = tournamentRepository.findById(tournamentId).get();
-        Player player = playerRepository.findById(tournamentId).get();
+        Player player = playerRepository.findById(playerId).get();
         player.assignTournament(tournament);
         return playerRepository.save(player);
     }
@@ -56,11 +57,10 @@ public class PlayerServiceImpl implements PlayerService {
 
     }
 
-    //TODO not currently working
-//    @Override
-//    public List<Player> getListOfPlayersTournament(Long tournamentid) {
-//        return playerRepository.findByTournamentId(tournamentid);
-//    }
+    @Override
+    public List<Player> findPlayersByTournament(Long tournamentid) {
+        return playerRepository.findPlayersByTournament(tournamentid);
+    }
 
 
 }
