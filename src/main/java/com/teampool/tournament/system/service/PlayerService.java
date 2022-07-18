@@ -22,5 +22,5 @@ public interface PlayerService {
     String getPlayerById(Long playerId);
 
 
-    List<Player> getListOfPlayersTournament(Long tournamentid);
+//    List<Player> getListOfPlayersTournament(Long tournamentid);
 }

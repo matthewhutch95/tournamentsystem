@@ -57,10 +57,10 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     //TODO not currently working
-    @Override
-    public List<Player> getListOfPlayersTournament(Long tournamentid) {
-        return playerRepository.findByTournamentId(tournamentid);
-    }
+//    @Override
+//    public List<Player> getListOfPlayersTournament(Long tournamentid) {
+//        return playerRepository.findByTournamentId(tournamentid);
+//    }
 
 
 }
