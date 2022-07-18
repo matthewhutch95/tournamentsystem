@@ -7,7 +7,10 @@ import com.teampool.tournament.system.repository.TournamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
@@ -33,6 +36,8 @@ public class PlayerServiceImpl implements PlayerService {
     public void deletePlayers() {
         playerRepository.deleteAll();
     }
+
+    // assign player to tournament using player id and tournament id
     @Override
     public Player assignPlayerToTournament(Long playerId, Long tournamentId){
         Tournament tournament = tournamentRepository.findById(tournamentId).get();
@@ -40,6 +45,23 @@ public class PlayerServiceImpl implements PlayerService {
         player.assignTournament(tournament);
         return playerRepository.save(player);
     }
+
+    // returns username based on given playerid
+    @Override
+    public String getPlayerById(Long playerId) {
+        Player player = playerRepository.findById(playerId).get();
+        player.getUsername();
+        //Player player = playerRepository.findById(playerId).get();
+        return playerRepository.findById(playerId).get().getUsername();
+
+    }
+
+    //TODO not currently working
+    @Override
+    public List<Player> getListOfPlayersTournament(Long tournamentid) {
+        return playerRepository.findByTournamentId(tournamentid);
+    }
+
 
 }
 

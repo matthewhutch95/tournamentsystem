@@ -23,6 +23,9 @@ public class TournamentServiceImpl implements TournamentService {
         return tournamentRepository.findAll();
     }
 
+//    public Set<String> getAllPlayerUsernames(Long tournamentId) {
+//        return tournamentRepository.
+//    }
 
 
 
