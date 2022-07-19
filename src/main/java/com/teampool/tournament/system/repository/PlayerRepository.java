@@ -15,6 +15,8 @@ import java.util.Set;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
+
+
     @Query(value = "SELECT * FROM player WHERE tournamentid = ?1", nativeQuery = true)
     List<Player> findPlayersByTournament(Long tournamentId);
 

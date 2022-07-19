@@ -31,7 +31,6 @@ public class TournamentController {
         return tournamentService.getAllTournaments();
     }
 
-    //TODO
     @GetMapping("/getPlayersUsingTournamentId/{tournamentId}")
     public Set<Player> getPlayersUsingTournamentId(@PathVariable Long tournamentId){
         return tournamentService.getListOfPlayers(tournamentId);
