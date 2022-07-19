@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,6 +19,10 @@ public class Tournament {
     private long roundNo;
     private long matchNo;
     private long winnerId;
+
+    public void addPlayer(Player player){
+        players.add(player);
+    }
 
     public long getTournamentId() {
         return tournamentId;

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -39,7 +40,6 @@ public class SignupController {
     /*
     return a set of player objects with given tournament id as parameter
      */
-    //TODO not working atm :)
     @GetMapping("/getListOfPlayersTournament/{tournamentid}")
     public List<Player> getAllPlayersTournamentId(@PathVariable("tournamentid") Long tournamentId){
         return playerService.findPlayersByTournament(tournamentId);
@@ -56,9 +56,6 @@ public class SignupController {
                                            @PathVariable("tournamentId") Long tournamentId) {
         return playerService.assignPlayerToTournament(playerId, tournamentId);
     }
-
-
-
 
     // return all players
     @GetMapping("/getAllUsers")

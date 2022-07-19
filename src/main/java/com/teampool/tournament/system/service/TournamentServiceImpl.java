@@ -23,9 +23,17 @@ public class TournamentServiceImpl implements TournamentService {
         return tournamentRepository.findAll();
     }
 
-//    public Set<String> getAllPlayerUsernames(Long tournamentId) {
-//        return tournamentRepository.
-//    }
+
+    // returns set of player objects using tournament id as search criteria
+    @Override
+    public Set<Player> getListOfPlayers(Long tournamentid) {
+
+        Tournament tournament = tournamentRepository.findById(tournamentid).get();
+
+        return tournament.getPlayers();
+    }
+
+
 
 
 

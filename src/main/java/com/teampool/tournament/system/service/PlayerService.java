@@ -22,6 +22,4 @@ public interface PlayerService {
     String getPlayerById(Long playerId);
 
     List<Player> findPlayersByTournament(Long tournamentid);
-
-
 }

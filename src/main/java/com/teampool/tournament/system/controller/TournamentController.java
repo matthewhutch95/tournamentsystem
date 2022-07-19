@@ -32,10 +32,9 @@ public class TournamentController {
     }
 
     //TODO
-    @GetMapping("/getPlayersUsingTournamentId")
-    public Set<String> getPlayersUsingTournamentId(Long tournamentId){
-
-        return null; 
+    @GetMapping("/getPlayersUsingTournamentId/{tournamentId}")
+    public Set<Player> getPlayersUsingTournamentId(@PathVariable Long tournamentId){
+        return tournamentService.getListOfPlayers(tournamentId);
     }
 
 

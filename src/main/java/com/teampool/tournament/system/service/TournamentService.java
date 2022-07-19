@@ -14,4 +14,5 @@ public interface TournamentService {
     public List<Tournament> getAllTournaments();
 
 
+    public Set<Player> getListOfPlayers(Long tournamentid);
 }
