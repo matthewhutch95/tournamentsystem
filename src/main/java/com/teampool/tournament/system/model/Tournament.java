@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,8 +17,8 @@ public class Tournament {
     @OneToMany(mappedBy ="tournament")
     private Set<Player> players = new HashSet<>();
     private String tournamentName;
-    private long roundNo;
-    private long matchNo;
+    //private long roundNo;
+    //private long matchNo;
     private long winnerId;
 
     public void addPlayer(Player player){
@@ -46,22 +47,6 @@ public class Tournament {
 
     public void setTournamentName(String tournamentName) {
         this.tournamentName = tournamentName;
-    }
-
-    public long getRoundNo() {
-        return roundNo;
-    }
-
-    public void setRoundNo(long roundNo) {
-        this.roundNo = roundNo;
-    }
-
-    public long getMatchNo() {
-        return matchNo;
-    }
-
-    public void setMatchNo(long matchNo) {
-        this.matchNo = matchNo;
     }
 
     public long getWinnerId() {

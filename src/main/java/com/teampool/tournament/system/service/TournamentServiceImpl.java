@@ -33,8 +33,10 @@ public class TournamentServiceImpl implements TournamentService {
         return tournament.getPlayers();
     }
 
-
-
+    @Override
+    public Tournament findById(Long tournamentid) {
+        return tournamentRepository.findById(tournamentid).get();
+    }
 
 
 }

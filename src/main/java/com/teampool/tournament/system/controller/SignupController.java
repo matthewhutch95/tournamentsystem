@@ -15,6 +15,7 @@ import java.util.Set;
  * Below is a list of endpoints for signing up user
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/signup")
 public class SignupController {
 
@@ -52,9 +53,9 @@ public class SignupController {
 
      */
     @PutMapping("/{playerId}/tournament/{tournamentId}")
-    public Player assignPlayerToTournament(@PathVariable("playerId") Long playerId,
+    public void assignPlayerToTournament(@PathVariable("playerId") Long playerId,
                                            @PathVariable("tournamentId") Long tournamentId) {
-        return playerService.assignPlayerToTournament(playerId, tournamentId);
+        playerService.assignPlayerToTournament(playerId, tournamentId);
     }
 
     // return all players

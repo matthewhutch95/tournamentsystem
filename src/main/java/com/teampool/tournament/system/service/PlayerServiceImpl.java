@@ -64,13 +64,7 @@ public class PlayerServiceImpl implements PlayerService {
         return playerRepository.findPlayersByTournament(tournamentid);
     }
 
-    //TODO
-//    @Override
-//    public ArrayList<Player> currentPlayers(Long tournamentId) {
-//        ArrayList<Player> currentPlayers = new ArrayList<>();
-//        currentPlayers.add(playerRepository.findPlayersByTournament(tournamentId)
-//        return currentPlayers;
-//    }
+
 
 
 }
