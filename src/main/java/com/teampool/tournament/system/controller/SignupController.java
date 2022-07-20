@@ -53,9 +53,10 @@ public class SignupController {
 
      */
     @PutMapping("/{playerId}/tournament/{tournamentId}")
-    public void assignPlayerToTournament(@PathVariable("playerId") Long playerId,
+    public String assignPlayerToTournament(@PathVariable("playerId") Long playerId,
                                            @PathVariable("tournamentId") Long tournamentId) {
         playerService.assignPlayerToTournament(playerId, tournamentId);
+        return "Player number: " + playerId + " signed up for tournament number: " + tournamentId;
     }
 
     // return all players
